@@ -1,3 +1,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.custom-button {
+    background-color: #5227cc; /* Purple color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .custom-button .icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .custom-button:hover {
+    background-color: #3d1fa3; /* Darker purple */
+    transform: scale(1.05);
+  }
+  
+  .custom-button:active {
+    transform: scale(0.98);
+  }
+  
+  .custom-button:focus {
+    outline: 2px solid #bb86fc;
+  }
+  

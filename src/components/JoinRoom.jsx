@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import InputBox from './InputBox';
 import Button from './Button';
 import TopName from './TopName';
+import { useNavigate } from 'react-router-dom';
 
 const JoinRoom = () => {
   const [name, setName] = useState('');
   const [roomid, setRoomid] = useState('');
+  const navigate = useNavigate()
 
   const handleChange = (e) => {
     setName(e.target.value);
@@ -16,6 +18,7 @@ const JoinRoom = () => {
 
   const handleSubmit = () =>{
     if(name && roomid){
+      navigate(`/home/${roomid}`)
     console.log(name, roomid);
     setRoomid("")
     setName("")

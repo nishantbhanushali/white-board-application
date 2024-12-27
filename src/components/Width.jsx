@@ -11,7 +11,7 @@ const Width = ({ strokeWidth, setStrokeWidth }) => {
                 type="range" 
                 id="strokeWidth" 
                 value={strokeWidth} 
-                min="1" 
+                min="0" 
                 max="10" 
                 onChange={handleStrokeChange}
                 className="w-[200px] h-[2px] bg-gray-300"

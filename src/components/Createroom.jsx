@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import InputBox from './InputBox';
 import Button from './Button';
 import TopName from './TopName';
 import { useNavigate } from 'react-router-dom';
 
-const Createroom = () => {
+
+const Createroom = ({setuser}) => {
   const [name, setName] = useState('');
   const [generator, setGenerator] = useState('');
+
+ 
+  
   const navigate = useNavigate()
 
   const handleChange = (e) => {
@@ -23,18 +27,29 @@ const Createroom = () => {
     }
     setGenerator(result); 
   };
-
-  const handleSubmit = () => {
+let roomData;
+  const handleSubmit = (e) => {
+    // e.preventdefault()
     if(!(name && generator)){
         alert('Please fill in all fields');
       
     }else{
-        console.log(name, generator); 
+        console.log(name, generator);
+        roomData = {
+          name : name,
+          generator : generator,
+          host : true,
+          
+        }
+        
+   
         setName('');
         setGenerator(''); 
-        navigate("/home" );
+        navigate(`/home/${generator}` );
     }
    
+    console.log(roomData);
+    
   };
 
   const copyToClipboard = () => {
