@@ -7,7 +7,7 @@ const Room = ({setuser}) => {
     <>
     <div className='flex flex-col md:flex-row justify-around items-center h-screen '>
   <Createroom setuser={setuser} />
-  <JoinRoom />
+{/*   <JoinRoom /> */}
 </div>
 
  
